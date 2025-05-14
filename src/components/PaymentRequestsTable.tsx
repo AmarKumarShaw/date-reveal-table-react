@@ -4,6 +4,7 @@ import { PaymentRequest } from '@/types/payment';
 import StatusBadge from './StatusBadge';
 import ContactAvatar from './ContactAvatar';
 import { formatCurrency } from '@/utils/formatters';
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from './ui/table';
 
 interface PaymentRequestsTableProps {
   requests: PaymentRequest[];
@@ -71,14 +72,15 @@ const PaymentRequestsTable: React.FC<PaymentRequestsTableProps> = ({ requests })
                         className="hover:bg-gray-50"
                       >
                         <td className="px-6 py-4 whitespace-nowrap">
-                          {isDateVisible && (
-                            <div className="text-sm text-gray-700">
+                          <div className="h-5 relative">
+                            <div 
+                              className={`text-sm text-gray-700 absolute top-0 left-0 transform transition-opacity duration-300 ease-in-out ${
+                                isDateVisible ? 'opacity-100' : 'opacity-0'
+                              }`}
+                            >
                               {formatDate(request.createdOn)}
                             </div>
-                          )}
-                          {!isDateVisible && (
-                            <div className="h-5"></div> // Empty div to maintain row height
-                          )}
+                          </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
