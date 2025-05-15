@@ -55,7 +55,23 @@ const PaymentRequests: React.FC = () => {
       amount: 10000.00,
       status: 'Canceled',
       account: 'Ops / Payroll'
-    }
+    },
+    {
+      id: '7',
+      createdOn: new Date('2023-04-28'),
+      contact: { initials: 'CB', name: 'Charless Bonito' },
+      amount: 10000.00,
+      status: 'Canceled',
+      account: 'Ops / Payroll'
+    },
+    {
+      id: '8',
+      createdOn: new Date('2023-04-28'),
+      contact: { initials: 'CB', name: 'Charles Bonito' },
+      amount: 10000.00,
+      status: 'Canceled',
+      account: 'Ops / Payroll'
+    },
   ];
 
   return (
