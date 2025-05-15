@@ -59,14 +59,18 @@ const PaymentRequests: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-full">
-      <div className="flex flex-wrap items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4 md:mb-0">Requests</h1>
-        <Button variant="outline" className="flex items-center gap-2">
-          <ArrowLeft className="h-4 w-4" /> Request Payment
-        </Button>
+    <div className="w-full bg-white sm:bg-gray-50 min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 max-w-full">
+        <div className="flex flex-wrap items-center justify-between mb-4 sm:mb-8">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-0">Requests</h1>
+          <Button variant="outline" className="flex items-center gap-2 text-xs sm:text-sm">
+            <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4" /> Request Payment
+          </Button>
+        </div>
+        <div className="bg-white sm:shadow-sm rounded-lg overflow-hidden">
+          <PaymentRequestsTable requests={mockRequests} />
+        </div>
       </div>
-      <PaymentRequestsTable requests={mockRequests} />
     </div>
   );
 };
